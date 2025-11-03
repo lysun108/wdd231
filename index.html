@@ -7,28 +7,16 @@
   <meta name="description" content="Official chamber site for the fictional city of Los Santos — events, member directory, and business resources." />
   <meta name="author" content="Yang Liao" />
 
+  <!-- ✅ Google Fonts (external, correct way) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Global styles -->
+  <!-- ✅ External CSS only -->
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Only the hero background lives here -->
-  <style>
-    .hero-art{
-      background: url("images/los_santos_skyline.jpg") center/cover no-repeat;
-      border-radius: .75rem;
-      min-height: 220px;
-      box-shadow: inset 0 0 30px rgba(0,0,0,.20);
-    }
-    @media (min-width: 900px){ .hero-art{ min-height: 260px; } }
-  </style>
-
-  <script defer src="scripts/nav.js"></script>
-  <script defer src="scripts/date.js"></script>
-
-  <!-- Organization JSON-LD -->
+  <!-- ✅ JSON-LD remains allowed -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,16 +34,17 @@
     }
   }
   </script>
+
+  <!-- ❌ 已移除所有 <style> 块 -->
 </head>
+
 <body>
-  <!-- Header -->
   <header>
     <img src="images/los-santos-logo.png" alt="Los Santos Chamber logo" width="64" height="64" loading="eager">
     <span class="site-name">Los Santos Chamber of Commerce</span>
     <button id="nav-button" class="hamburger" aria-label="navigation"></button>
   </header>
 
-  <!-- Primary nav -->
   <nav id="nav-bar" class="navigation" aria-label="primary">
     <ul>
       <li class="current"><a href="./" aria-current="page">Home</a></li>
@@ -68,7 +57,6 @@
   <main>
     <h1>Home</h1>
 
-    <!-- Hero -->
     <section class="hero">
       <div class="hero-text">
         <h2>Welcome to Los Santos</h2>
@@ -80,10 +68,11 @@
         </ul>
         <a class="btn" href="#" aria-label="Join the chamber">Join Now</a>
       </div>
-      <figure class="hero-art" aria-label="Los Santos skyline" role="img"></figure>
+      <figure class="hero-art" aria-label="Los Santos skyline" role="img">
+        <img src="images/los_santos_skyline.jpg" alt="Los Santos skyline view">
+      </figure>
     </section>
 
-    <!-- News -->
     <section>
       <h2>City News & Updates</h2>
       <div class="cards">
@@ -105,20 +94,18 @@
       </div>
     </section>
 
-    <!-- Partners -->
     <section aria-labelledby="partners-heading" class="partners">
       <h2 id="partners-heading">Partners</h2>
       <ul class="logo-grid" role="list">
-        <li><a href="#" title="Maze Bank"><img src="images/partners/maze-bank.svg" alt="Maze Bank logo"></a></li>
-        <li><a href="#" title="Up-n-Atom Burger"><img src="images/partners/up-n-atom.svg" alt="Up-n-Atom Burger logo"></a></li>
-        <li><a href="#" title="Los Santos Transit"><img src="images/partners/lst.svg" alt="Los Santos Transit logo"></a></li>
-        <li><a href="#" title="24/7"><img src="images/partners/24-7.svg" alt="24/7 logo"></a></li>
-        <li><a href="#" title="Yellow Jack Inn"><img src="images/partners/yellow-jack.svg" alt="Yellow Jack Inn logo"></a></li>
+        <li><a href="#"><img src="images/partners/maze-bank.svg" alt="Maze Bank logo"></a></li>
+        <li><a href="#"><img src="images/partners/up-n-atom.svg" alt="Up-n-Atom Burger logo"></a></li>
+        <li><a href="#"><img src="images/partners/lst.svg" alt="Los Santos Transit logo"></a></li>
+        <li><a href="#"><img src="images/partners/24-7.svg" alt="24/7 logo"></a></li>
+        <li><a href="#"><img src="images/partners/yellow-jack.svg" alt="Yellow Jack Inn logo"></a></li>
       </ul>
       <p class="tm-note">All names are fictional and used for coursework demonstration only.</p>
     </section>
 
-    <!-- Contact: address + map inside one card -->
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <div class="contact-panel">
@@ -136,21 +123,20 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <p class="footer-address">
       <strong>Address:</strong> 1 Badger Building, Downtown, Los Santos, San Andreas 90210
     </p>
     <div class="social">
-      <a href="https://github.com/yourname" aria-label="GitHub">
-        <img src="images/github.svg" alt="">
-      </a>
-      <a href="https://www.linkedin.com/in/yourname/" aria-label="LinkedIn">
-        <img src="images/linkedin.svg" alt="">
-      </a>
+      <a href="https://github.com/yourname" aria-label="GitHub"><img src="images/github.svg" alt=""></a>
+      <a href="https://www.linkedin.com/in/yourname/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt=""></a>
     </div>
     <p class="copyright">© <span id="currentyear"></span> Yang Liao · California, USA</p>
     <p id="lastModified" aria-label="Last modified date"></p>
   </footer>
+
+  <!-- ✅ External JS only -->
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/date.js"></script>
 </body>
 </html>
