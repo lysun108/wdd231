@@ -82,39 +82,50 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
 .logo-grid img{ max-width:100%; height:48px; object-fit:contain }
 .tm-note{ color:var(--muted); font-size:.9rem; margin-top:.5rem }
 
-/* ===== Contact（panel & map）===== */
-/* Contact panel：减少内边距，让两列更贴近 */
+/* ===== Contact Section (optimized layout) ===== */
 .contact-panel{
-  padding:.75rem;
-}
-
-/* 网格：减小间距；让两列在大屏前默认竖排时更紧凑 */
-.contact-grid{
-  gap:.75rem;
-  align-items:stretch;            /* 让左侧单元格拉伸到与地图同高 */
-}
-
-/* 左侧文字块：去卡片边框背景，改成随容器拉伸并垂直居中 */
-.contact-card{
-  background:transparent;
-  border:none;
-  padding:.5rem .75rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;         /* 垂直居中对齐文字 */
-  min-height:100%;
-}
-
-/* 右侧地图：稍微降低纵横比，整体不那么高；四周留一点内边距避免贴边 */
-.map-card{
-  aspect-ratio:3/2;
-  padding:4px;
+  background:#fff;
+  border:1px solid #e6edf7;
   border-radius:.75rem;
+  padding:1.25rem;
+  box-sizing:border-box;
 }
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr; /* 默认竖排 */
+  gap:1rem;
+  align-items:center; /* 居中对齐 */
+  justify-items:center;
+}
+
+.contact-card{
+  text-align:left;
+  line-height:1.6;
+  padding:.75rem 1rem;
+  border-radius:.5rem;
+  width:100%;
+}
+
+.map-card{
+  width:90%;
+  max-width:480px;
+  border-radius:.75rem;
+  overflow:hidden;
+  border:1px solid #e6edf7;
+  background:#f6f7fb;
+  box-shadow:0 1px 0 rgba(16,24,40,.04);
+}
+
 .map-card img{
-  border-radius:.6rem;
-  object-position:55% 48%;
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  border-radius:.75rem;
+  filter:brightness(.98) contrast(1.05) saturate(1.05);
 }
+
 
 /* Footer（旧样式，若未使用可忽略） */
 footer{
