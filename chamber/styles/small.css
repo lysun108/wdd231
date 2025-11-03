@@ -167,4 +167,60 @@ footer.site-footer{
 }
 .copyright{ color:#475569; margin: .25rem 0; }
 #lastModified{ color:#64748b; margin: 0; }
+/* ===== Contact & Footer (refine map look) ===== */
+.contact-panel{
+  background:#fff;
+  border:1px solid #e6edf7;
+  border-radius:.75rem;
+  padding:1rem;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr; /* 小屏先堆叠 */
+  gap:1rem;
+  align-items:start;
+}
+
+.contact-card{
+  margin:0;
+  padding:.75rem 1rem;
+  border-radius:.5rem;
+  line-height:1.6;
+}
+
+.map-card{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;                  /* 小屏更扁，避免太高 */
+  border-radius:.75rem;
+  overflow:hidden;
+  border:1px solid #e6edf7;
+  background:#f6f7fb;
+  box-shadow:0 1px 0 rgba(16,24,40,.04);
+  align-self:start;
+}
+
+.map-card img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:55% 48%;            /* 轻微偏移，凸显“Downtown”区域 */
+  filter: brightness(.98) contrast(1.02) saturate(1.05);
+}
+
+/* 水印标题，弱化但能呼应页面设计 */
+.map-card::after{
+  content:"DOWNTOWN";
+  position:absolute;
+  inset:auto 50% 10% auto;
+  transform:translateX(50%);
+  font-weight:800;
+  letter-spacing:.12em;
+  font-size:clamp(16px,2.4vw,22px);
+  color:rgba(60,60,67,.35);
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+  pointer-events:none;
+}
 
