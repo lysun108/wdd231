@@ -1,0 +1,8 @@
+@media (min-width: 768px){
+  .navigation{display:block}
+  .navigation ul{display:flex; column-gap:1rem}
+  .navigation a{border:none; padding:1rem}
+  .hero{grid-template-columns:1.2fr 1fr}
+  .cards{grid-template-columns:repeat(3, 1fr)}
+  .logo-grid{ grid-template-columns:repeat(5, minmax(0, 1fr)); }
+}
