@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- minimal page-local styles for hero/contact/footer -->
+  <!-- Page-local styles (可改为 styles/contact-footer.css) -->
   <style>
     /* hero skyline block */
     .hero-art{
@@ -25,29 +24,33 @@
       .hero-art{ min-height: 260px; }
     }
 
-    /* contact split layout */
-    .contact-wrap{
+    /* ===== Contact：同卡片内左右布局 ===== */
+    .contact-panel{
+      background: #fff;
+      border: 1px solid #e6edf7;
+      border-radius: .75rem;
+      padding: 1rem;
+    }
+    .contact-grid{
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 1.25rem;
+      grid-template-columns: 1fr 420px; /* 左侧地址，右侧地图 */
+      gap: 1rem;
       align-items: start;
     }
     .contact-card{
-      background: #fff;
-      border-radius: .75rem;
-      padding: 1rem 1.25rem;
+      margin: 0;
+      padding: .5rem .75rem;
+      border-radius: .5rem;
       line-height: 1.6;
-      box-shadow: 0 1px 0 rgba(16,24,40,.04);
-      border: 1px solid #e6edf7;
     }
     .map-card{
       width: 100%;
       aspect-ratio: 16/10;
-      border-radius: .75rem;
+      border-radius: .5rem;
       overflow: hidden;
       border: 1px solid #e6edf7;
-      box-shadow: 0 1px 0 rgba(16,24,40,.04);
       background: #f6f7fb;
+      box-shadow: 0 1px 0 rgba(16,24,40,.04);
     }
     .map-card img{
       width: 100%; height: 100%; object-fit: cover; display:block;
@@ -55,10 +58,10 @@
     }
     /* stack on small screens */
     @media (max-width: 840px){
-      .contact-wrap{ grid-template-columns: 1fr; }
+      .contact-grid{ grid-template-columns: 1fr; }
     }
 
-    /* footer bar */
+    /* ===== Footer ===== */
     footer.site-footer{
       margin-top: 1rem;
       background: #ecf2f7;
@@ -171,23 +174,25 @@
       <p class="tm-note">All names are fictional and used for coursework demonstration only.</p>
     </section>
 
-    <!-- Contact section: left text + right map card -->
+    <!-- Contact：同卡片内左右布局 -->
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
-      <div class="contact-wrap">
-        <address class="contact-card">
-          <strong>Los Santos Chamber of Commerce</strong><br>
-          1 Badger Building, Downtown<br>
-          Los Santos, San Andreas 90210<br>
-        </address>
-        <figure class="map-card" aria-label="Downtown map" role="img">
-          <img src="images/los_santos_downtown_map.jpg" alt="Map of Downtown Los Santos">
-        </figure>
+      <div class="contact-panel">
+        <div class="contact-grid">
+          <address class="contact-card">
+            <strong>Los Santos Chamber of Commerce</strong><br>
+            1 Badger Building, Downtown<br>
+            Los Santos, San Andreas 90210<br>
+          </address>
+          <figure class="map-card" aria-label="Downtown map" role="img">
+            <img src="images/los_santos_downtown_map.jpg" alt="Map of Downtown Los Santos">
+          </figure>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer bar -->
+  <!-- Footer -->
   <footer class="site-footer">
     <p class="footer-address">
       <strong>Address:</strong> 1 Badger Building, Downtown, Los Santos, San Andreas 90210
