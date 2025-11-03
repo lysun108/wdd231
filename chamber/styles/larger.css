@@ -12,3 +12,19 @@
     grid-template-columns: 1fr 420px; /* 左侧地址，右侧地图 */
   }
 }
+/* 768px 已有你的导航/卡片设置，这里只做 Contact 栏位的优化 */
+@media (min-width: 840px){
+  .contact-grid{
+    grid-template-columns: minmax(0,1fr) 420px;  /* 左文本，右地图 */
+    align-items:start;
+  }
+  .map-card{
+    aspect-ratio:4/3;      /* 桌面端略高，和左侧文字块更均衡 */
+  }
+}
+
+@media (min-width: 1200px){
+  .contact-grid{
+    grid-template-columns: minmax(0,1fr) 460px;  /* 大屏右侧地图稍放大 */
+  }
+}
