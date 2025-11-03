@@ -75,110 +75,26 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
 .logo-grid{
   display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; padding:0; margin:0; list-style:none;
 }
-.logo-grid li{ display:flex; align-items:center; justify-content:center; padding:.75rem; border:1px solid #d1d5db; border-radius:12px; background:#ffffff; }
+.logo-grid li{
+  display:flex; align-items:center; justify-content:center; padding:.75rem;
+  border:1px solid #d1d5db; border-radius:12px; background:#ffffff;
+}
 .logo-grid img{ max-width:100%; height:48px; object-fit:contain }
 .tm-note{ color:var(--muted); font-size:.9rem; margin-top:.5rem }
 
-/* Contact */
-.contact-card{
-  display:block; padding:1rem; border:1px solid #cbd5e1;
-  border-radius:12px; background:var(--card); line-height:1.6;
-}
-.map-placeholder{
-  margin-top:.75rem; height:180px; border-radius:12px;
-  background:repeating-linear-gradient(45deg,#eef2ff,#eef2ff 10px,#e2e8f0 10px,#e2e8f0 20px);
-  border:1px dashed #94a3b8;
-}
-
-/* Footer */
-footer{
-  margin-top:2rem; padding:1.25rem; text-align:center; color:var(--muted);
-  background:#e6ecf4; border-top:1px solid #cbd5e1
-}
-footer .social{
-  display:flex; justify-content:center; column-gap:12px; margin:.5rem 0 0.25rem;
-}
-footer .social a{
-  color:#2563eb; display:inline-flex; align-items:center; justify-content:center;
-  width:36px; height:36px; border-radius:999px; background:rgba(37,99,235,0.08);
-}
-footer .social a:hover{ background:rgba(37,99,235,0.18); }
-footer img{width:20px; height:20px; display:block}
-/* ===== Contact & Footer layout ===== */
-.contact-panel{
-  background: #fff;
-  border: 1px solid #e6edf7;
-  border-radius: .75rem;
-  padding: 1rem;
-}
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  align-items: start;
-}
-.contact-card{
-  margin: 0;
-  padding: .5rem .75rem;
-  border-radius: .5rem;
-  line-height: 1.6;
-}
-.map-card{
-  width: 100%;
-  aspect-ratio: 16/10;
-  border-radius: .5rem;
-  overflow: hidden;
-  border: 1px solid #e6edf7;
-  background: #f6f7fb;
-  box-shadow: 0 1px 0 rgba(16,24,40,.04);
-}
-.map-card img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: contrast(1.03) saturate(1.02);
-}
-
-/* Footer */
-footer.site-footer{
-  margin-top: 1rem;
-  background: #ecf2f7;
-  border-top: 1px solid #dbe4ef;
-  text-align: center;
-  padding: 1.25rem 1rem 2rem;
-}
-.footer-address{
-  margin: .25rem 0 1rem;
-  color: #334155;
-}
-.footer-address strong{ font-weight: 600; }
-.social{
-  display: inline-flex;
-  gap: 16px;
-  align-items: center;
-  margin: .25rem 0 1rem;
-}
-.social img{ width:22px; height:22px; opacity:.9; }
-.social a:focus-visible{
-  outline: 2px solid #0B5FFF;
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.copyright{ color:#475569; margin: .25rem 0; }
-#lastModified{ color:#64748b; margin: 0; }
-/* ===== Contact & Footer (refine map look) ===== */
+/* ===== Contact（panel & map）===== */
 .contact-panel{
   background:#fff;
   border:1px solid #e6edf7;
   border-radius:.75rem;
-  padding:1rem;
+  padding:1.25rem;          /* 增加内边距，避免贴边 */
+  box-sizing:border-box;
 }
 
 .contact-grid{
   display:grid;
-  grid-template-columns: 1fr; /* 小屏先堆叠 */
-  gap:1rem;
+  grid-template-columns:1fr; /* 小屏堆叠 */
+  gap:1.25rem;               /* 左右留白更舒适 */
   align-items:start;
 }
 
@@ -192,13 +108,14 @@ footer.site-footer{
 .map-card{
   position:relative;
   width:100%;
-  aspect-ratio:16/9;                  /* 小屏更扁，避免太高 */
+  aspect-ratio:4/3;          /* 小屏也不至于太扁 */
   border-radius:.75rem;
   overflow:hidden;
   border:1px solid #e6edf7;
   background:#f6f7fb;
   box-shadow:0 1px 0 rgba(16,24,40,.04);
-  align-self:start;
+  padding:4px;               /* 为地图加内边距，避免顶边 */
+  box-sizing:border-box;
 }
 
 .map-card img{
@@ -206,21 +123,53 @@ footer.site-footer{
   height:100%;
   display:block;
   object-fit:cover;
-  object-position:55% 48%;            /* 轻微偏移，凸显“Downtown”区域 */
-  filter: brightness(.98) contrast(1.02) saturate(1.05);
+  object-position:55% 48%;   /* 轻微偏移，聚焦 downtown */
+  border-radius:.6rem;       /* 图片本身也做圆角 */
+  filter:brightness(.98) contrast(1.02) saturate(1.05);
 }
 
-/* 水印标题，弱化但能呼应页面设计 */
-.map-card::after{
-  content:"DOWNTOWN";
-  position:absolute;
-  inset:auto 50% 10% auto;
-  transform:translateX(50%);
-  font-weight:800;
-  letter-spacing:.12em;
-  font-size:clamp(16px,2.4vw,22px);
-  color:rgba(60,60,67,.35);
-  text-shadow:0 1px 0 rgba(255,255,255,.6);
-  pointer-events:none;
-}
+/* （如图片本身带有“DOWNTOWN”字样，这里不再叠加水印） */
+/* .map-card::after{ ... }  — 已移除 */
 
+/* Footer（旧样式，若未使用可忽略） */
+footer{
+  margin-top:2rem; padding:1.25rem; text-align:center; color:var(--muted);
+  background:#e6ecf4; border-top:1px solid #cbd5e1
+}
+footer .social{
+  display:flex; justify-content:center; column-gap:12px; margin:.5rem 0 0.25rem;
+}
+footer .social a{
+  color:#2563eb; display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:999px; background:rgba(37,99,235,0.08);
+}
+footer .social a:hover{ background:rgba(37,99,235,0.18); }
+footer img{width:20px; height:20px; display:block}
+
+/* Footer（新版 site-footer 覆盖） */
+footer.site-footer{
+  margin-top:1rem;
+  background:#ecf2f7;
+  border-top:1px solid #dbe4ef;
+  text-align:center;
+  padding:1.25rem 1rem 2rem;
+}
+.footer-address{
+  margin:.25rem 0 1rem;
+  color:#334155;
+}
+.footer-address strong{ font-weight:600; }
+.social{
+  display:inline-flex;
+  gap:16px;
+  align-items:center;
+  margin:.25rem 0 1rem;
+}
+.social img{ width:22px; height:22px; opacity:.9; }
+.social a:focus-visible{
+  outline:2px solid #0B5FFF;
+  outline-offset:3px;
+  border-radius:6px;
+}
+.copyright{ color:#475569; margin:.25rem 0; }
+#lastModified{ color:#64748b; margin:0; }
