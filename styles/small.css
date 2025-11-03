@@ -1,4 +1,4 @@
-:root{
+:root{ 
   --bg:#f0f4fa;
   --card:#ffffff;
   --ink:#0f172a;
@@ -40,29 +40,57 @@ main{padding:1rem}
 h1{font-size:1.6rem; margin:.5rem 0 1rem}
 h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
 
-/* Hero */
+/* ===== Hero Section (fixed layout for skyline) ===== */
 .hero{
-  display:grid; gap:1rem; padding:1rem; border:1px solid #cbd5e1;
-  border-radius:16px; background:linear-gradient(180deg,#ffffff,#f3f7fc);
+  display:grid;
+  gap:1rem;
+  padding:1rem;
+  border:1px solid #cbd5e1;
+  border-radius:16px;
+  background:linear-gradient(180deg,#ffffff,#f3f7fc);
   box-shadow:0 4px 12px rgba(0,0,0,.04);
 }
+
 .hero-text p{color:var(--muted)}
+
 .hero .btn{
-  display:inline-block; margin-top:.5rem; padding:.6rem 1rem; font-weight:600;
-  color:#ffffff; background:var(--brand); border-radius:999px; text-decoration:none;
+  display:inline-block;
+  margin-top:.5rem;
+  padding:.6rem 1rem;
+  font-weight:600;
+  color:#ffffff;
+  background:var(--brand);
+  border-radius:999px;
+  text-decoration:none;
 }
 .hero .btn:hover{filter:brightness(0.95)}
+
+/* ✅ 让 skyline 图片比例固定、居中裁切 */
 .hero-art{
-  height:160px; border-radius:12px; background:
-    radial-gradient(60% 80% at 10% 30%, #93c5fd33, transparent 60%),
-    radial-gradient(60% 80% at 80% 10%, #86efac33, transparent 60%),
-    linear-gradient(135deg,#e5e7eb,#f1f5f9);
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid #d1d5db;
+  background:#f6f7fb;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+.hero-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 55%;
+  display:block;
+  border-radius:12px;
 }
 
 /* Cards */
 .cards{display:grid; gap:1rem}
 .card{
-  padding:1rem; border:1px solid #d1d5db; border-radius:12px; background:var(--card);
+  padding:1rem;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  background:var(--card);
   box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 .card h3{margin:.25rem 0 .25rem}
@@ -73,11 +101,16 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
 /* Partners */
 .partners{ margin-top:1rem }
 .logo-grid{
-  display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; padding:0; margin:0; list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px; padding:0; margin:0; list-style:none;
 }
 .logo-grid li{
-  display:flex; align-items:center; justify-content:center; padding:.75rem;
-  border:1px solid #d1d5db; border-radius:12px; background:#ffffff;
+  display:flex; align-items:center; justify-content:center;
+  padding:.75rem;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  background:#ffffff;
 }
 .logo-grid img{ max-width:100%; height:48px; object-fit:contain }
 .tm-note{ color:var(--muted); font-size:.9rem; margin-top:.5rem }
@@ -90,15 +123,13 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
   padding:1.25rem;
   box-sizing:border-box;
 }
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr; /* 默认竖排 */
   gap:1rem;
-  align-items:center; /* 居中对齐 */
+  align-items:center;
   justify-items:center;
 }
-
 .contact-card{
   text-align:left;
   line-height:1.6;
@@ -106,7 +137,6 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
   border-radius:.5rem;
   width:100%;
 }
-
 .map-card{
   width:90%;
   max-width:480px;
@@ -116,7 +146,6 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
   background:#f6f7fb;
   box-shadow:0 1px 0 rgba(16,24,40,.04);
 }
-
 .map-card img{
   width:100%;
   height:auto;
@@ -126,11 +155,10 @@ h2{font-size:1.2rem; margin:1.25rem 0 .5rem}
   filter:brightness(.98) contrast(1.05) saturate(1.05);
 }
 
-
 /* Footer（旧样式，若未使用可忽略） */
 footer{
   margin-top:2rem; padding:1.25rem; text-align:center; color:var(--muted);
-  background:#e6ecf4; border-top:1px solid #cbd5e1
+  background:#e6ecf4; border-top:1px solid #cbd5e1;
 }
 footer .social{
   display:flex; justify-content:center; column-gap:12px; margin:.5rem 0 0.25rem;
