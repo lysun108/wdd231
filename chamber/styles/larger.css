@@ -6,3 +6,9 @@
   .cards{grid-template-columns:repeat(3, 1fr)}
   .logo-grid{ grid-template-columns:repeat(5, minmax(0, 1fr)); }
 }
+/* For larger screens */
+@media (min-width: 840px) {
+  .contact-grid {
+    grid-template-columns: 1fr 420px; /* 左侧地址，右侧地图 */
+  }
+}
