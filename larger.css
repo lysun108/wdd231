@@ -1,0 +1,26 @@
+/* Larger viewports */
+@media (min-width: 768px){
+  .site-header{
+    grid-template-columns: auto 1fr;
+  }
+  .menu-btn{ display:none; }
+  .site-nav{ display:block !important; }
+  .site-nav ul{
+    display:flex; gap:1rem; justify-content:flex-end; padding:0; margin:0;
+  }
+  .site-nav a{
+    padding:.5rem .75rem; border:0; border-radius:.5rem;
+  }
+  .site-nav a:hover{ background:#fff; }
+
+  h1{ font-size:2rem; }
+
+  .home-grid{
+    grid-template-columns: 2fr 1fr;
+    align-items:stretch;
+  }
+
+  .course-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
