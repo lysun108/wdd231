@@ -1,4 +1,4 @@
-/* For tablets and desktops */
+/* ===== Larger Screen Styles (≥768px) ===== */
 @media (min-width: 768px) {
 
   /* ===== Navigation ===== */
@@ -14,16 +14,25 @@
     padding: 1rem;
   }
 
-  /* ===== Hero Section (balanced two-column, fixed width) ===== */
-@media (min-width: 768px) {
+  /* ===== Main Layout Width ===== */
+  main {
+    padding: 1.5rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* ===== Hero Section (Aligned with other sections) ===== */
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     align-items: stretch;
     padding: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto; /* 居中 */
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff, #f3f7fc);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    width: 100%;
   }
 
   .hero-text {
@@ -35,7 +44,6 @@
 
   .hero-art {
     width: 100%;
-    max-width: 100%;
     height: 100%;
     min-height: 260px;
     max-height: 340px;
@@ -44,17 +52,15 @@
     border: 1px solid #d1d5db;
     background: #f6f7fb;
     box-shadow: 0 2px 6px rgba(0,0,0,.05);
-    justify-self: end;
   }
 
   .hero-art img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 52% 55%; /* 稍微偏右，视觉居中 */
+    object-position: 50% 55%;
     display: block;
   }
-}
 
   /* ===== Cards ===== */
   .cards {
@@ -69,7 +75,15 @@
   }
 
   /* ===== Contact Section ===== */
+  .contact-panel {
+    padding: 1.25rem;
+    border: 1px solid #e6edf7;
+    border-radius: .75rem;
+    background: #ffffff;
+  }
+
   .contact-grid {
+    display: grid;
     grid-template-columns: 1fr 420px;
     gap: 1.5rem;
     align-items: start;
@@ -78,12 +92,13 @@
   .contact-card {
     font-size: 1rem;
     padding: 1rem 1.25rem;
+    line-height: 1.6;
   }
 
   .map-card {
     width: 100%;
-    max-width: none;
     height: 100%;
+    max-height: 260px;
     border-radius: .75rem;
     overflow: hidden;
     border: 1px solid #e6edf7;
@@ -103,14 +118,21 @@
   footer.site-footer {
     margin-top: 2rem;
     padding: 1.5rem 1rem 2.5rem;
+    background: #ecf2f7;
+    border-top: 1px solid #dbe4ef;
+    text-align: center;
   }
 }
 
-/* For large screens (≥1024px) */
+/* ===== Extra Large Screens (≥1024px) ===== */
 @media (min-width: 1024px) {
 
+  main {
+    max-width: 1320px;
+  }
+
   .hero {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1.05fr 1fr;
   }
 
   .hero-art {
