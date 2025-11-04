@@ -14,23 +14,28 @@
     padding: 1rem;
   }
 
-  /* ===== Hero Section (equal height image) ===== */
+  /* ===== Hero Section (balanced two-column, fixed width) ===== */
+@media (min-width: 768px) {
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    align-items: stretch; /* 文字与图片等高 */
+    align-items: stretch;
     padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto; /* 居中 */
   }
 
   .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 1.25rem;
   }
 
   .hero-art {
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     min-height: 260px;
     max-height: 340px;
@@ -39,15 +44,17 @@
     border: 1px solid #d1d5db;
     background: #f6f7fb;
     box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    justify-self: end;
   }
 
   .hero-art img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 55%;
+    object-position: 52% 55%; /* 稍微偏右，视觉居中 */
     display: block;
   }
+}
 
   /* ===== Cards ===== */
   .cards {
