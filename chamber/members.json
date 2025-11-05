@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Maze Bank",
+    "address": {
+      "street": "100 Maze Plaza",
+      "city": "Los Santos",
+      "state": "LS",
+      "zip": "90021"
+    },
+    "phone": "3235550101",
+    "website": "https://example.com/maze-bank",
+    "logo": "images/partners/maze-bank.svg",
+    "level": 3
+  },
+  {
+    "name": "Up-n-Atom Burger",
+    "address": {
+      "street": "245 Vinewood Blvd",
+      "city": "Los Santos",
+      "state": "LS",
+      "zip": "90028"
+    },
+    "phone": "3235550112",
+    "website": "https://example.com/up-n-atom",
+    "logo": "images/partners/up-n-atom.svg",
+    "level": 2
+  },
+  {
+    "name": "Los Santos Transit",
+    "address": {
+      "street": "555 Metro Station Rd",
+      "city": "Los Santos",
+      "state": "LS",
+      "zip": "90029"
+    },
+    "phone": "3235550125",
+    "website": "https://example.com/lst",
+    "logo": "images/partners/lst.svg",
+    "level": 1
+  },
+  {
+    "name": "24/7 Convenience Store",
+    "address": {
+      "street": "77 Strawberry Ave",
+      "city": "Los Santos",
+      "state": "LS",
+      "zip": "90031"
+    },
+    "phone": "3235550137",
+    "website": "https://example.com/24-7",
+    "logo": "images/partners/24-7.svg",
+    "level": 1
+  },
+  {
+    "name": "Yellow Jack Inn",
+    "address": {
+      "street": "301 Route 68",
+      "city": "Sandy Shores",
+      "state": "LS",
+      "zip": "90036"
+    },
+    "phone": "7605550149",
+    "website": "https://example.com/yellow-jack",
+    "logo": "images/partners/yellow-jack.svg",
+    "level": 2
+  }
+]
