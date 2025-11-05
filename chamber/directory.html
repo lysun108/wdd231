@@ -6,17 +6,31 @@
   <title>Los Santos Chamber | Business Directory</title>
   <meta name="description" content="Browse the Los Santos Chamber of Commerce business directory. Filter by membership level and switch between grid and list views." />
   <meta name="author" content="Yang Liao" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Los Santos Chamber | Business Directory" />
-  <meta property="og:description" content="Discover Los Santos businesses in our chamber directory. Mobile‑friendly with grid/list views." />
+  <meta property="og:description" content="Discover Los Santos businesses in our chamber directory. Mobile-friendly with grid/list views." />
   <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html" />
   <meta property="og:image" content="https://username.github.io/wdd231/chamber/images/favicon.svg" />
+
+  <!-- PWA / color -->
+  <meta name="theme-color" content="#2563eb" />
+
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- ✅ Google Fonts: Inter（必须用 link，不用 @import） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles/normalize.css" />
   <link rel="stylesheet" href="styles/base.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="brand">
       <a href="./directory.html" class="logo" aria-label="Los Santos Chamber home">LSCC</a>
@@ -25,9 +39,11 @@
         <p class="tagline">Connecting local businesses and community</p>
       </div>
     </div>
+
     <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
+
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="./directory.html" aria-current="page">Directory</a></li>
@@ -37,13 +53,16 @@
       </ul>
     </nav>
   </header>
+
   <main id="main" class="main">
     <section class="controls" aria-label="Directory view and filters">
       <h2 class="visually-hidden">Directory Controls</h2>
+
       <div class="view-toggle" role="group" aria-label="Toggle directory layout">
         <button id="gridBtn" class="toggle active" aria-pressed="true">Grid</button>
         <button id="listBtn" class="toggle" aria-pressed="false">List</button>
       </div>
+
       <div class="filters">
         <label for="levelFilter">Membership level</label>
         <select id="levelFilter" name="levelFilter">
@@ -54,15 +73,17 @@
         </select>
       </div>
     </section>
+
     <section id="directory" class="directory grid" aria-live="polite" aria-busy="true"></section>
   </main>
+
   <footer class="site-footer">
     <section class="contact">
       <h2 class="visually-hidden">Contact</h2>
       <address>
         Los Santos Chamber of Commerce<br />
         1600 Vinewood Blvd, Los Santos, LS 90028<br />
-        <a href="tel:+13235550123">(323) 555‑0123</a> •
+        <a href="tel:+13235550123">(323) 555-0123</a> •
         <a href="mailto:info@lscc.example">info@lscc.example</a>
       </address>
     </section>
@@ -71,6 +92,12 @@
       <p>Last Modified: <span id="lastModified"></span></p>
     </section>
   </footer>
+
+  <noscript>
+    This page needs JavaScript to load the business directory.
+  </noscript>
+
+  <!-- 你的脚本会在这里加载 members.json 并渲染 -->
   <script src="scripts/directory.js" type="module"></script>
 </body>
 </html>
