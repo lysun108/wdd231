@@ -1,0 +1,6 @@
+/* normalize-dedup.css — tiny reset with no 'body' or 'a' rules to avoid duplicates */
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+img, picture { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+[hidden] { display: none !important; }
