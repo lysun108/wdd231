@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Los Santos Chamber | Business Directory</title>
-  <meta name="author" content="Yang Liao" />
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/base.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Los Santos Chamber | Business Directory</title>
+<meta name="description" content="Explore local businesses in the Los Santos Chamber of Commerce directory. Switch between grid and list views and discover member benefits." />
+<meta name="author" content="Yang Liao" />
+
+
+<!-- Open Graph / Facebook Meta -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Los Santos Chamber | Business Directory" />
+<meta property="og:description" content="Discover Los Santos businesses in our chamber directory. Grid or list view, mobile‑friendly, and fast." />
+<meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html" />
+<meta property="og:image" content="https://username.github.io/wdd231/chamber/images/favicon.svg" />
+
+
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+
+<link rel="stylesheet" href="styles/normalize.css" />
+<link rel="stylesheet" href="styles/base.css" />
 </head>
 <body>
-  <header><h1>Los Santos Chamber of Commerce</h1></header>
-  <main id="main"></main>
-  <footer>© Los Santos Chamber • Built by Yang Liao</footer>
-  <script src="scripts/directory.js"></script>
+<header class="site-header">
+<div class="brand">
+<a href="./directory.html" class="logo" aria-label="Los Santos Chamber home">LSCC</a>
+<div class="brand-text">
+<h1>Los Santos Chamber of Commerce</h1>
+<p class="tagline">Connecting local businesses and community</p>
+</div>
+</div>
+
+
+<button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>
+
+
+<nav id="site-nav" class="site-nav" aria-label="Primary">
+<ul>
+<li><a href="./directory.html" aria-current="page">Directory</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#">Join</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</nav>
+</header>
+
+
+<main id="main" class="main">
+<section class="controls">
+<h2 class="visually-hidden">View Controls</h2>
+<div class="view-toggle" role="group" aria-label="Toggle directory layout">
+<button id="gridBtn" class="toggle active" aria-pressed="true">Grid</button>
+<button id="listBtn" class="toggle" aria-pressed="false">List</button>
+</div>
+<div class="filters">
+<label for="levelFilter">Membership:</label>
+<select id="levelFilter" name="levelFilter">
+<option value="all">All</option>
+<option value="3">Gold</option>
+<option value="2">Silver</option>
+<option value="1">Member</option>
+</select>
+</div>
+</section>
+
+
+<section id="directory" class="directory grid" aria-live="polite" aria-busy="true"></section>
+</main>
+
+
+<footer class="site-footer">
+<section class="contact">
+<h2 class="visually-hidden">Contact</h2>
+<address>
+Los Santos Chamber of Commerce<br>
+1600 Vinewood Blvd, Los Santos, LS 90028<br>
+<a href="tel:+13235550123">(323) 555‑0123</a> •
+<a href="mailto:info@lscc.example">info@lscc.example</a>
+</address>
+</section>
+<section class="dev-meta">
+<p>© <span id="year"></span> Los Santos Chamber • Built by <strong>Yang Liao</strong> • WDD 231</p>
+<p>Last Modified: <span id="lastModified"></span></p>
+</section>
+</footer>
+
+
+<script src="scripts/directory.js" type="module"></script>
 </body>
 </html>
