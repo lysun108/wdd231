@@ -1,1 +1,7 @@
-html{line-height:1.15}body{margin:0}
+/* Minimal normalize/reset suitable for coursework */
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+img, picture { max-width: 100%; display: block; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; }
