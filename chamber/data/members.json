@@ -63,5 +63,22 @@
     "website": "https://example.com/yellow-jack",
     "logo": "images/partners/yellow-jack.svg",
     "level": 2
+  },
+  {
+    "name": "Los Santos Customs",
+    "logo": "images/partners/placeholder.svg",
+    "address": { "street": "402 Popular St", "city": "Los Santos", "state": "LS", "zip": "90015" },
+    "phone": "3235550168",
+    "website": "https://example.com/ls-customs",
+    "level": 2
+  },
+  {
+    "name": "Cluckin’ Bell",
+    "logo": "images/partners/placeholder.svg",
+    "address": { "street": "12 Palomino Ave", "city": "Los Santos", "state": "LS", "zip": "90032" },
+    "phone": "3235550173",
+    "website": "https://example.com/cluckin-bell",
+    "level": 3
   }
 ]
+
