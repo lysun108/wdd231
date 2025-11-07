@@ -90,3 +90,46 @@ a:hover{ text-decoration:underline; }
 /* Motion + print */
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 @media print{.site-header,.controls,.site-footer{display:none}.directory{grid-template-columns:1fr 1fr;gap:.5rem}.card{box-shadow:none}}
+/* ---------- AA 对比度修正 ---------- */
+:root{
+  /* 链接色调深，确保在浅底上 >= 4.5:1 */
+  --link:#1d4ed8;     /* 原先 #0b63d8 */
+}
+
+/* Grid/List 切换：活动态蓝底白字，但用更深蓝保证 AA */
+.toggle.active{
+  background:#1d4ed8;   /* 原先 var(--brand)=#2563eb 可能 <4.5:1 */
+  color:#fff;
+}
+
+/* 当前页导航高亮：Wayfinding 清晰可见且对比足够 */
+.site-nav a[aria-current="page"]{
+  background:#1d4ed8;   /* 深蓝底 */
+  color:#fff;
+  border-radius:.6rem;
+}
+
+/* 徽章若使用很浅底，也确保文字不变淡（继承 var(--ink) 即可） */
+.badge{ color:var(--ink); }
+
+/* ---------- 移动端导航（用 hidden 控制显隐） ---------- */
+/* 你已经在 normalize 里写了 [hidden]{display:none!important}，这里只需定义样式 */
+@media (max-width:720px){
+  .site-header{ position:relative; }
+  #site-nav{
+    position:absolute; top:64px; left:0; right:0;
+    background:#fff; border-top:1px solid #e2e8f0;
+    box-shadow:0 12px 24px rgba(0,0,0,.08);
+  }
+  #site-nav ul{
+    display:flex; flex-direction:column; gap:.5rem;
+    padding:.75rem 1rem; margin:0;
+  }
+  /* 不再用 .open 类，完全依赖 hidden 属性 */
+  .site-nav, .site-nav.open{ display:block; } /* 允许布局渲染，hidden 决定显示与否 */
+}
+
+/* 桌面端：菜单常显，按钮视觉不变 */
+@media (min-width:721px){
+  #site-nav{ position:static; box-shadow:none; }
+}
