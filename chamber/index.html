@@ -69,7 +69,7 @@
           <li>Browse member perks &amp; resources</li>
           <li>Join the chamber and get listed</li>
         </ul>
-        <!-- CTA points to the (future) join page -->
+        <!-- CTA points to the join page -->
         <a class="btn" href="join.html" aria-label="Join the chamber">Join Now</a>
       </div>
       <figure class="hero-art" aria-label="Los Santos skyline" role="img">
@@ -99,22 +99,22 @@
       </div>
     </section>
 
-    <!-- ✅ Weather section (for OpenWeatherMap API data) -->
+    <!-- ✅ Weather section (for Google Weather API data) -->
     <section aria-labelledby="weather-heading" class="weather">
       <h2 id="weather-heading">Downtown Weather</h2>
       <div class="weather-current" aria-live="polite">
         <p class="weather-location">Los Santos, San Andreas</p>
         <p class="weather-main">
-          <span id="weather-temp">--</span>
+          <span id="weather-temp">--°F</span>
           <span id="weather-description">Loading current conditions…</span>
         </p>
       </div>
 
       <div class="weather-forecast-wrapper">
         <h3>3-Day Forecast</h3>
-        <div id="weather-forecast" class="weather-forecast" aria-label="Three day temperature forecast">
-          <!-- JS will inject forecast cards here -->
-        </div>
+        <ul id="weather-forecast" class="weather-forecast" aria-label="Three day temperature forecast">
+          <!-- JS will inject forecast list items here -->
+        </ul>
       </div>
     </section>
 
@@ -176,7 +176,7 @@
   <script defer src="scripts/nav.js"></script>
   <script defer src="scripts/date.js"></script>
   <!-- New scripts for this week’s requirements -->
-  <script defer src="scripts/weather.js"></script>
+  <script defer src="scripts/weather-google.js"></script>
   <script defer src="scripts/spotlights.js"></script>
 </body>
 </html>
