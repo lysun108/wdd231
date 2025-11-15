@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Los Santos Chamber of Commerce | Home</title>
-  <meta name="description" content="Official chamber site for the fictional city of Los Santos — events, member directory, and business resources." />
+  <meta name="description" content="Official chamber site for the fictional city of Los Santos — events, weather, business directory, and chamber member spotlights." />
   <meta name="author" content="Yang Liao" />
 
   <!-- ✅ Google Fonts (external, correct way) -->
@@ -34,8 +34,6 @@
     }
   }
   </script>
-
-  <!-- ❌ 已移除所有 <style> 块 -->
 </head>
 
 <body>
@@ -45,40 +43,47 @@
     <button id="nav-button" class="hamburger" aria-label="navigation"></button>
   </header>
 
+  <!-- ✅ Main site navigation, consistent with chamber pages -->
   <nav id="nav-bar" class="navigation" aria-label="primary">
     <ul>
-      <li class="current"><a href="./" aria-current="page">Home</a></li>
-      <li><a href="#">Chamber</a></li>
-      <li><a href="#">Final</a></li>
-      <li><a href="#">Contact</a></li>
+      <li class="current"><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
 
   <main>
     <h1>Home</h1>
 
+    <!-- ✅ Hero + Call to Action -->
     <section class="hero">
       <div class="hero-text">
         <h2>Welcome to Los Santos</h2>
-        <p>We are the city’s business hub—connecting Vinewood startups, Del Perro retailers, and Port of LS logistics into one thriving community.</p>
+        <p>
+          We are the city’s business hub—connecting Vinewood startups, Del Perro retailers,
+          and Port of LS logistics into one thriving community.
+        </p>
         <ul class="goals">
-          <li>Find events & networking nights</li>
-          <li>Browse member perks & resources</li>
+          <li>Find events &amp; networking nights</li>
+          <li>Browse member perks &amp; resources</li>
           <li>Join the chamber and get listed</li>
         </ul>
-        <a class="btn" href="#" aria-label="Join the chamber">Join Now</a>
+        <!-- CTA points to the (future) join page -->
+        <a class="btn" href="join.html" aria-label="Join the chamber">Join Now</a>
       </div>
       <figure class="hero-art" aria-label="Los Santos skyline" role="img">
         <img src="images/los_santos_skyline.jpg" alt="Los Santos skyline view">
       </figure>
     </section>
 
-    <section>
-      <h2>City News & Updates</h2>
+    <!-- ✅ Current Events / News section -->
+    <section aria-labelledby="events-heading">
+      <h2 id="events-heading">City News &amp; Events</h2>
       <div class="cards">
         <article class="card">
-          <h3>Shop & Dine Los Santos</h3>
-          <p>Holiday campaign across Vespucci & Downtown. Members get free listing and map pin.</p>
+          <h3>Shop &amp; Dine Los Santos</h3>
+          <p>Holiday campaign across Vespucci &amp; Downtown. Members get free listing and map pin.</p>
           <a href="#" class="text-link">Learn more</a>
         </article>
         <article class="card">
@@ -94,6 +99,37 @@
       </div>
     </section>
 
+    <!-- ✅ Weather section (for OpenWeatherMap API data) -->
+    <section aria-labelledby="weather-heading" class="weather">
+      <h2 id="weather-heading">Downtown Weather</h2>
+      <div class="weather-current" aria-live="polite">
+        <p class="weather-location">Los Santos, San Andreas</p>
+        <p class="weather-main">
+          <span id="weather-temp">--</span>
+          <span id="weather-description">Loading current conditions…</span>
+        </p>
+      </div>
+
+      <div class="weather-forecast-wrapper">
+        <h3>3-Day Forecast</h3>
+        <div id="weather-forecast" class="weather-forecast" aria-label="Three day temperature forecast">
+          <!-- JS will inject forecast cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Member Spotlights (will be filled from JSON via JS) -->
+    <section aria-labelledby="spotlights-heading" class="spotlights">
+      <h2 id="spotlights-heading">Member Spotlights</h2>
+      <p class="spotlights-intro">
+        Featured gold and silver members offering services across Los Santos.
+      </p>
+      <div id="spotlight-container" class="cards">
+        <!-- JS will inject 2–3 spotlight cards here from members JSON -->
+      </div>
+    </section>
+
+    <!-- ✅ Partners section (static logos) -->
     <section aria-labelledby="partners-heading" class="partners">
       <h2 id="partners-heading">Partners</h2>
       <ul class="logo-grid" role="list">
@@ -106,6 +142,7 @@
       <p class="tm-note">All names are fictional and used for coursework demonstration only.</p>
     </section>
 
+    <!-- ✅ Contact block on the home page -->
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <div class="contact-panel">
@@ -138,5 +175,8 @@
   <!-- ✅ External JS only -->
   <script defer src="scripts/nav.js"></script>
   <script defer src="scripts/date.js"></script>
+  <!-- New scripts for this week’s requirements -->
+  <script defer src="scripts/weather.js"></script>
+  <script defer src="scripts/spotlights.js"></script>
 </body>
 </html>
