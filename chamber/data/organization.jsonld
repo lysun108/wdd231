@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Los Santos Chamber of Commerce",
+  "url": "https://lysun108.github.io/wdd231/chamber",
+  "logo": "images/los-santos-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 Badger Building, Downtown",
+    "addressLocality": "Los Santos",
+    "addressRegion": "San Andreas",
+    "postalCode": "90210",
+    "addressCountry": "US"
+  }
+}
