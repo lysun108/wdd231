@@ -32,23 +32,9 @@
   <link rel="stylesheet" href="styles/larger.css">
 
   <!-- ✅ JSON-LD remains allowed -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Los Santos Chamber of Commerce",
-    "url": "https://example.github.io/wdd231/",
-    "logo": "images/los-santos-logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1 Badger Building, Downtown",
-      "addressLocality": "Los Santos",
-      "addressRegion": "San Andreas",
-      "postalCode": "90210",
-      "addressCountry": "US"
-    }
-  }
-  </script>
+  <!-- JSON-LD moved to external file -->
+  <script type="application/ld+json" src="data/organization.jsonld"></script>
+
 </head>
 
 <body>
