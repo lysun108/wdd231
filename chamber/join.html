@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Los Santos Chamber | Join</title>
+  <meta name="description" content="Apply to join the Los Santos Chamber of Commerce. Choose a membership level and submit your business information." />
+  <meta name="author" content="Yang Liao" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Los Santos Chamber | Join" />
+  <meta property="og:description" content="Join the Los Santos Chamber of Commerce. Membership levels and benefits available." />
+  <meta property="og:image" content="https://lysun108.github.io/wdd231/chamber/og-directory.png">
+  <meta property="og:url" content="https://lysun108.github.io/wdd231/chamber/join.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/normalize-dedup.css">
+  <link rel="stylesheet" href="styles/base-dedup.css">
+  <link rel="stylesheet" href="styles/join.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <a href="./index.html" class="logo" aria-label="Los Santos Chamber home">LSCC</a>
+      <div class="brand-text">
+        <h1>Los Santos Chamber of Commerce</h1>
+        <p class="tagline">Connecting local businesses and community</p>
+      </div>
+    </div>
+
+    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./directory.html">Directory</a></li>
+        <li><a href="./join.html" aria-current="page">Join</a></li>
+        <li><a href="./discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="main join-main">
+    <h2 class="page-title">Join the Chamber</h2>
+
+    <div class="join-layout">
+      <!-- FORM -->
+      <section class="form-card" aria-labelledby="formTitle">
+        <h3 id="formTitle">Membership Application Form</h3>
+
+        <form method="get" action="thankyou.html" class="join-form">
+
+          <label>
+            First Name *
+            <input
+              type="text"
+              name="first"
+              title="Applicant First Name"
+              autocomplete="given-name"
+              required>
+          </label>
+
+          <label>
+            Last Name *
+            <input
+              type="text"
+              name="last"
+              title="Applicant Last Name"
+              autocomplete="family-name"
+              required>
+          </label>
+
+          <label>
+            Organizational Title
+            <input
+              type="text"
+              name="title"
+              title="Your title within the organization"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\\-\\s]{7,}"
+              placeholder="e.g., Operations Manager">
+            <span class="hint">Letters, hyphens, spaces only. Minimum 7 characters.</span>
+          </label>
+
+          <label>
+            Email *
+            <input
+              type="email"
+              name="email"
+              title="Email Address"
+              autocomplete="email"
+              placeholder="example: john89@gmail.com"
+              required>
+          </label>
+
+          <label>
+            Mobile Phone *
+            <input
+              type="tel"
+              name="phone"
+              title="Mobile Phone Number"
+              autocomplete="tel"
+              required>
+          </label>
+
+          <label>
+            Business / Organization Name *
+            <input
+              type="text"
+              name="organization"
+              title="Business or Organization Name"
+              autocomplete="organization"
+              required>
+          </label>
+
+          <fieldset class="level-fieldset">
+            <legend>Membership Level *</legend>
+
+            <label class="radio-row">
+              <input type="radio" name="level" value="np" required>
+              NP Membership (Nonprofit, no fee)
+            </label>
+
+            <label class="radio-row">
+              <input type="radio" name="level" value="bronze">
+              Bronze Membership
+            </label>
+
+            <label class="radio-row">
+              <input type="radio" name="level" value="silver">
+              Silver Membership
+            </label>
+
+            <label class="radio-row">
+              <input type="radio" name="level" value="gold">
+              Gold Membership
+            </label>
+          </fieldset>
+
+          <label>
+            Business Description
+            <textarea
+              name="description"
+              title="Describe your organization"></textarea>
+          </label>
+
+          <!-- hidden timestamp -->
+          <input type="hidden" name="timestamp" id="timestamp">
+
+          <button type="submit" class="primary-btn">Submit Application</button>
+        </form>
+      </section>
+
+      <!-- MEMBERSHIP CARDS -->
+      <aside class="levels" aria-labelledby="levelsTitle">
+        <h3 id="levelsTitle">Membership Levels</h3>
+
+        <div class="level-cards">
+          <article class="level-card" data-modal="npModal">
+            <h4>NP Membership</h4>
+            <p>For nonprofit organizations. Zero annual fee.</p>
+            <button type="button" class="ghost-btn">Learn More</button>
+          </article>
+
+          <article class="level-card" data-modal="bronzeModal">
+            <h4>Bronze Membership</h4>
+            <p>Entry-level access to chamber resources.</p>
+            <button type="button" class="ghost-btn">Learn More</button>
+          </article>
+
+          <article class="level-card" data-modal="silverModal">
+            <h4>Silver Membership</h4>
+            <p>Enhanced visibility and event discounts.</p>
+            <button type="button" class="ghost-btn">Learn More</button>
+          </article>
+
+          <article class="level-card" data-modal="goldModal">
+            <h4>Gold Membership</h4>
+            <p>Premium promotions and VIP benefits.</p>
+            <button type="button" class="ghost-btn">Learn More</button>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <section class="contact">
+      <h2 class="visually-hidden">Contact</h2>
+      <address>
+        Los Santos Chamber of Commerce<br />
+        1600 Vinewood Blvd, Los Santos, LS 90028<br />
+        <a href="tel:+13235550123">(323) 555-0123</a> •
+        <a href="mailto:info@lscc.example">info@lscc.example</a>
+      </address>
+    </section>
+    <section class="dev-meta">
+      <p>© <span id="year"></span> Los Santos Chamber • Built by <strong>Yang Liao</strong> • WDD 231</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </section>
+  </footer>
+
+  <!-- MODALS (required 4) -->
+  <dialog id="npModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <h3>NP Membership Benefits</h3>
+      <ul>
+        <li>No annual fee</li>
+        <li>Access to community events</li>
+        <li>Nonprofit spotlight in listings</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <dialog id="bronzeModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <h3>Bronze Membership Benefits</h3>
+      <ul>
+        <li>Directory listing</li>
+        <li>Networking mixers</li>
+        <li>Quarterly training workshops</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <dialog id="silverModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <h3>Silver Membership Benefits</h3>
+      <ul>
+        <li>Everything in Bronze</li>
+        <li>Event ticket discounts</li>
+        <li>Homepage rotating ad spot</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <dialog id="goldModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <h3>Gold Membership Benefits</h3>
+      <ul>
+        <li>Everything in Silver</li>
+        <li>VIP business spotlight</li>
+        <li>Priority sponsorship access</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <noscript>This page needs JavaScript for navigation and modals.</noscript>
+  <script src="scripts/join.js" type="module"></script>
+</body>
+</html>
