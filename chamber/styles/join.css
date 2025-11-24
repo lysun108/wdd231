@@ -1,0 +1,150 @@
+/* join.css */
+
+.join-main {
+  padding-block: 1.5rem 2rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.join-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .join-layout {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.form-card,
+.levels {
+  background: var(--surface, #fff);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.join-form label {
+  display: grid;
+  gap: .4rem;
+  margin-bottom: .9rem;
+  font-weight: 600;
+}
+
+.join-form input,
+.join-form textarea {
+  font: inherit;
+  border: 1px solid #c8c8c8;
+  padding: .6rem .7rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.join-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.hint {
+  font-weight: 400;
+  font-size: .85rem;
+  opacity: .8;
+}
+
+.level-fieldset {
+  border: 1px dashed #d0d0d0;
+  padding: .8rem;
+  border-radius: 10px;
+  margin-bottom: .9rem;
+}
+
+.radio-row {
+  display: flex;
+  gap: .5rem;
+  font-weight: 500;
+  margin: .35rem 0;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: .7rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+.primary-btn:hover {
+  filter: brightness(.95);
+}
+
+/* Membership cards */
+.level-cards {
+  display: grid;
+  gap: .9rem;
+}
+
+.level-card {
+  background: #e8f2ff;
+  border: 1px solid #cfe0ff;
+  border-radius: 12px;
+  padding: .9rem;
+  display: grid;
+  gap: .5rem;
+
+  /* animation on initial load */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: cardIn .8s ease forwards;
+}
+
+.level-card:nth-child(2) { animation-delay: .12s; }
+.level-card:nth-child(3) { animation-delay: .24s; }
+.level-card:nth-child(4) { animation-delay: .36s; }
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ghost-btn {
+  justify-self: start;
+  border: 1px solid #2563eb;
+  background: transparent;
+  color: #2563eb;
+  padding: .45rem .8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ghost-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Modals */
+.modal::backdrop {
+  background: rgba(0,0,0,.55);
+}
+
+.modal-box {
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  min-width: min(420px, 92vw);
+}
+
+.modal-close {
+  float: right;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
