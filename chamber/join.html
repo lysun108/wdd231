@@ -1,67 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Los Santos Chamber | Join</title>
+  <title>Los Santos Chamber of Commerce | Join</title>
   <meta name="description" content="Apply to join the Los Santos Chamber of Commerce. Choose a membership level and submit your business information." />
   <meta name="author" content="Yang Liao" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Los Santos Chamber | Join" />
-  <meta property="og:description" content="Join the Los Santos Chamber of Commerce. Membership levels and benefits available." />
-  <meta property="og:image" content="https://lysun108.github.io/wdd231/chamber/og-directory.png">
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Los Santos Chamber of Commerce — Join">
+  <meta property="og:description" content="Become a member of the Los Santos Chamber. Explore benefits by membership level and apply online.">
+  <meta property="og:image" content="https://lysun108.github.io/wdd231/chamber/images/og-image.png">
   <meta property="og:url" content="https://lysun108.github.io/wdd231/chamber/join.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Los Santos Chamber of Commerce | Join">
+  <meta name="twitter:description" content="Join LSCC and grow your business in Los Santos.">
+  <meta name="twitter:image" content="https://lysun108.github.io/wdd231/chamber/images/og-image.png">
 
-  <meta name="theme-color" content="#2563eb" />
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/normalize-dedup.css">
-  <link rel="stylesheet" href="styles/base-dedup.css">
+  <!-- Same CSS as index.html -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Join page extra styles (external only) -->
   <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header">
-    <div class="brand">
-      <a href="./index.html" class="logo" aria-label="Los Santos Chamber home">LSCC</a>
-      <div class="brand-text">
-        <h1>Los Santos Chamber of Commerce</h1>
-        <p class="tagline">Connecting local businesses and community</p>
-      </div>
-    </div>
-
-    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./directory.html">Directory</a></li>
-        <li><a href="./join.html" aria-current="page">Join</a></li>
-        <li><a href="./discover.html">Discover</a></li>
-      </ul>
-    </nav>
+  <header>
+    <img src="images/los-santos-logo.png" alt="Los Santos Chamber logo" width="64" height="64" loading="eager">
+    <span class="site-name">Los Santos Chamber of Commerce</span>
+    <button id="nav-button" class="hamburger" aria-label="navigation"></button>
   </header>
 
-  <main id="main" class="main join-main">
-    <h2 class="page-title">Join the Chamber</h2>
+  <!-- Same nav as index.html -->
+  <nav id="nav-bar" class="navigation" aria-label="primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li class="current"><a href="join.html" aria-current="page">Join</a></li>
+    </ul>
+  </nav>
 
-    <div class="join-layout">
+  <main class="join-main">
+    <h1>Join</h1>
+
+    <section class="join-layout">
       <!-- FORM -->
-      <section class="form-card" aria-labelledby="formTitle">
-        <h3 id="formTitle">Membership Application Form</h3>
+      <div class="form-card">
+        <h2>Membership Application Form</h2>
 
         <form method="get" action="thankyou.html" class="join-form">
 
@@ -159,112 +157,114 @@
               title="Describe your organization"></textarea>
           </label>
 
-          <!-- hidden timestamp -->
+          <!-- hidden timestamp required -->
           <input type="hidden" name="timestamp" id="timestamp">
 
-          <button type="submit" class="primary-btn">Submit Application</button>
+          <button type="submit" class="btn primary-btn">Submit Application</button>
         </form>
-      </section>
+      </div>
 
       <!-- MEMBERSHIP CARDS -->
-      <aside class="levels" aria-labelledby="levelsTitle">
-        <h3 id="levelsTitle">Membership Levels</h3>
+      <aside class="levels">
+        <h2>Membership Levels</h2>
 
         <div class="level-cards">
           <article class="level-card" data-modal="npModal">
-            <h4>NP Membership</h4>
+            <h3>NP Membership</h3>
             <p>For nonprofit organizations. Zero annual fee.</p>
-            <button type="button" class="ghost-btn">Learn More</button>
+            <button type="button" class="btn ghost-btn">Learn More</button>
           </article>
 
           <article class="level-card" data-modal="bronzeModal">
-            <h4>Bronze Membership</h4>
+            <h3>Bronze Membership</h3>
             <p>Entry-level access to chamber resources.</p>
-            <button type="button" class="ghost-btn">Learn More</button>
+            <button type="button" class="btn ghost-btn">Learn More</button>
           </article>
 
           <article class="level-card" data-modal="silverModal">
-            <h4>Silver Membership</h4>
-            <p>Enhanced visibility and event discounts.</p>
-            <button type="button" class="ghost-btn">Learn More</button>
+            <h3>Silver Membership</h3>
+            <p>Better visibility and event discounts.</p>
+            <button type="button" class="btn ghost-btn">Learn More</button>
           </article>
 
           <article class="level-card" data-modal="goldModal">
-            <h4>Gold Membership</h4>
-            <p>Premium promotions and VIP benefits.</p>
-            <button type="button" class="ghost-btn">Learn More</button>
+            <h3>Gold Membership</h3>
+            <p>Top-tier promotion and VIP benefits.</p>
+            <button type="button" class="btn ghost-btn">Learn More</button>
           </article>
         </div>
       </aside>
-    </div>
+    </section>
+
+    <!-- MODALS (4 required) -->
+    <dialog id="npModal" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+        <h3>NP Membership Benefits</h3>
+        <ul>
+          <li>No annual fee</li>
+          <li>Access to community events</li>
+          <li>Nonprofit spotlight in listings</li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog id="bronzeModal" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+        <h3>Bronze Membership Benefits</h3>
+        <ul>
+          <li>Directory listing</li>
+          <li>Networking mixers</li>
+          <li>Quarterly workshops</li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog id="silverModal" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+        <h3>Silver Membership Benefits</h3>
+        <ul>
+          <li>Everything in Bronze</li>
+          <li>Event ticket discounts</li>
+          <li>Homepage rotating ad spot</li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog id="goldModal" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+        <h3>Gold Membership Benefits</h3>
+        <ul>
+          <li>Everything in Silver</li>
+          <li>VIP spotlight placement</li>
+          <li>Priority sponsorship access</li>
+        </ul>
+      </div>
+    </dialog>
+
   </main>
 
+  <!-- Same footer as index.html -->
   <footer class="site-footer">
-    <section class="contact">
-      <h2 class="visually-hidden">Contact</h2>
-      <address>
-        Los Santos Chamber of Commerce<br />
-        1600 Vinewood Blvd, Los Santos, LS 90028<br />
-        <a href="tel:+13235550123">(323) 555-0123</a> •
-        <a href="mailto:info@lscc.example">info@lscc.example</a>
-      </address>
-    </section>
-    <section class="dev-meta">
-      <p>© <span id="year"></span> Los Santos Chamber • Built by <strong>Yang Liao</strong> • WDD 231</p>
-      <p>Last Modified: <span id="lastModified"></span></p>
-    </section>
+    <p class="footer-address">
+      <strong>Address:</strong> 1 Badger Building, Downtown, Los Santos, San Andreas 90210
+    </p>
+    <div class="social">
+      <a href="https://github.com/lysun108" aria-label="GitHub"><img src="images/github.svg" alt="Github"></a>
+      <a href="https://www.linkedin.com/in/lysun108/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+    </div>
+    <p class="copyright">© <span id="currentyear"></span> Yang Liao · California, USA · WDD231 Class Project</p>
+    <p id="lastModified" aria-label="Last modified date"></p>
   </footer>
 
-  <!-- MODALS (required 4) -->
-  <dialog id="npModal" class="modal">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close modal">✕</button>
-      <h3>NP Membership Benefits</h3>
-      <ul>
-        <li>No annual fee</li>
-        <li>Access to community events</li>
-        <li>Nonprofit spotlight in listings</li>
-      </ul>
-    </div>
-  </dialog>
+  <!-- External JS only (same as index) -->
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/date.js"></script>
 
-  <dialog id="bronzeModal" class="modal">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close modal">✕</button>
-      <h3>Bronze Membership Benefits</h3>
-      <ul>
-        <li>Directory listing</li>
-        <li>Networking mixers</li>
-        <li>Quarterly training workshops</li>
-      </ul>
-    </div>
-  </dialog>
-
-  <dialog id="silverModal" class="modal">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close modal">✕</button>
-      <h3>Silver Membership Benefits</h3>
-      <ul>
-        <li>Everything in Bronze</li>
-        <li>Event ticket discounts</li>
-        <li>Homepage rotating ad spot</li>
-      </ul>
-    </div>
-  </dialog>
-
-  <dialog id="goldModal" class="modal">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close modal">✕</button>
-      <h3>Gold Membership Benefits</h3>
-      <ul>
-        <li>Everything in Silver</li>
-        <li>VIP business spotlight</li>
-        <li>Priority sponsorship access</li>
-      </ul>
-    </div>
-  </dialog>
-
-  <noscript>This page needs JavaScript for navigation and modals.</noscript>
-  <script src="scripts/join.js" type="module"></script>
+  <!-- Join page logic -->
+  <script defer src="scripts/join.js"></script>
 </body>
 </html>
