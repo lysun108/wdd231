@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Plan – Southern California International Student Life Guide</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #003366;   /* 深蓝：主色 */
+      --accent: #00A3C8;    /* 亮青：按钮 / 高亮 */
+      --bg: #FAFAFA;        /* 浅灰背景 */
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 2rem auto;
+      max-width: 900px;
+      line-height: 1.7;
+      color: #333;
+      background: var(--bg);
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    h1 {
+      margin-bottom: 0.2rem;
+    }
+
+    hr {
+      margin: 1.5rem 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    strong {
+      color: #006699;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .color-box {
+      width: 120px;
+      height: 40px;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    .wireframe {
+      border: 2px dashed #999;
+      padding: 1rem;
+      margin: 1rem 0 2rem;
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    .wireframe p {
+      margin: 0.3rem 0;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+      background: #fff;
+      border-left: 4px solid var(--accent);
+      padding: 0.75rem 1rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>W04 Website Project Site Plan</h1>
+<p><strong>Project Title:</strong> Southern California International Student Life Guide</p>
+<p><strong>Author:</strong> Yang Liao</p>
+
+<hr>
+
+<h2>1. Site Name</h2>
+<p><strong>Southern California International Student Life Guide</strong></p>
+<p>
+This name clearly reflects the main purpose of the site: a practical guide for international students
+who are living and studying in Southern California. It is descriptive, easy to understand, and can be
+used together with a simple logo and favicon later in the final project.
+</p>
+
+<h2>2. Site Purpose</h2>
+<p>
+The website will provide essential and practical information for international students who attend
+community colleges, BYU-Pathway Worldwide, Cal Poly Pomona, and other universities in Southern
+California. The goal is to help newcomers handle common challenges such as housing, transportation,
+scholarships, work rules, and school / course planning.
+</p>
+<p>
+The site will also demonstrate modern web development skills from this course, including semantic
+HTML, responsive CSS, and JavaScript features such as data fetching, local storage, and interactive
+components.
+</p>
+
+<h2>3. Target Audience & Scenarios</h2>
+<p><strong>Target Audience:</strong> New and current international students in Southern California (F-1 / J-1, or other visa types) who need simple, experience-based information in English.</p>
+
+<h3>Scenarios (User Questions)</h3>
+<ul>
+  <li>“Where can I find affordable housing options near community colleges such as Chaffey College or Citrus College?”</li>
+  <li>“How do I use public transportation (bus / metro) in Southern California and are there any student discounts?”</li>
+  <li>“What scholarship and financial resources are available for international students, including BYU-Pathway and local community colleges?”</li>
+  <li>“What are the basic F-1 / J-1 work rules in the U.S., and what should I know before working on campus or during CPT/OPT?”</li>
+  <li>“How can I plan my classes and transfer credits between schools in a smart way?”</li>
+</ul>
+
+<hr>
+
+<h2>4. Planned Pages for the Final Website</h2>
+
+<h3>Page 1 – <code>index.html</code> (Home – Overview)</h3>
+<ul>
+  <li>Short welcome message and introduction to Southern California student life.</li>
+  <li>Hero section with key call-to-action buttons (Housing, Money & Work, School Planning).</li>
+  <li>Quick overview cards that summarize the three main content areas.</li>
+  <li>Link to the HTML form page (for questions / simple contact) and to the Attributions page.</li>
+</ul>
+
+<h3>Page 2 – <code>living.html</code> (Living Resources)</h3>
+<ul>
+  <li>Information about housing types (homestay, shared apartment, student housing, etc.).</li>
+  <li>Simple tips about renting in California (lease, deposit, roommate, safety).</li>
+  <li>Transportation section with bus / metro basics and student discounts.</li>
+  <li>Dynamic list (from JSON) of example housing or living resources in Southern California.</li>
+</ul>
+
+<h3>Page 3 – <code>study-planning.html</code> (Academic, Money & Course Planning)</h3>
+<ul>
+  <li>Scholarship and financial aid ideas that are realistic for international students.</li>
+  <li>Short introduction to things like Phi Theta Kappa, BYU-Pathway programs, and transfer planning.</li>
+  <li>Tips for choosing classes, combining community college + online courses, and not falling behind.</li>
+  <li>Dynamic cards (from the same JSON or another JSON section) listing programs / resources with links.</li>
+</ul>
+
+<p class="note">
+The HTML form and the attributions page will be additional simple pages
+(form action + resource references) as required in the project description,
+but they will not count as part of the three main content pages.
+</p>
+
+<hr>
+
+<h2>5. Color Scheme</h2>
+
+<h3>Primary Color – Deep Blue <code>#003366</code></h3>
+<div class="color-box" style="background:#003366;"></div>
+<p>Usage: main headings, header background, navigation bar, footer background.</p>
+
+<h3>Accent Color – Bright Cyan <code>#00A3C8</code></h3>
+<div class="color-box" style="background:#00A3C8;"></div>
+<p>Usage: buttons, links on hover, small badges, focus states, important icons.</p>
+
+<h3>Neutral Background – Light Gray <code>#FAFAFA</code></h3>
+<div class="color-box" style="background:#FAFAFA;"></div>
+<p>Usage: main page background to make the content easy to read.</p>
+
+<h3>Text – Dark Gray <code>#333333</code></h3>
+<div class="color-box" style="background:#333333;"></div>
+<p>Usage: body text for good contrast and readability.</p>
+
+<hr>
+
+<h2>6. Typography</h2>
+<p><strong>Primary Font:</strong> Inter (Google Font)</p>
+<ul>
+  <li><strong>Headings (H1–H3):</strong> Inter 700, uppercase or sentence case.</li>
+  <li><strong>Body text:</strong> Inter 300–500, comfortable line height.</li>
+  <li><strong>Navigation & buttons:</strong> Inter 600, slightly larger letter spacing.</li>
+</ul>
+<p>
+Inter is a modern, clean sans-serif font that works well on screens and supports
+a professional but friendly tone for international student content.
+</p>
+
+<hr>
+
+<h2>7. Wireframe – Home Page Layout</h2>
+
+<h3>Mobile View (320px)</h3>
+<div class="wireframe">
+  <p>[Top Bar: Logo + Hamburger Icon]</p>
+  <p>[Slide-in Navigation Menu – Home / Living / Study Planning]</p>
+  <p>[Hero Section – “Welcome to Southern California” + short text + main button]</p>
+  <p>[Three stacked feature cards: Housing / Transportation / Scholarships]</p>
+  <p>[Section: Quick Tips – bullet list or small cards]</p>
+  <p>[Section: “Start Here” – link to Study Planning page + link to Living page]</p>
+  <p>[Footer: small logo, attribution link, video link, contact link]</p>
+</div>
+
+<h3>Desktop / Tablet View</h3>
+<div class="wireframe">
+  <p>[Header: Left = Logo; Right = Horizontal Nav (Home | Living | Study Planning)]</p>
+  <p>[Full-width Hero Banner with background image and call-to-action buttons]</p>
+  <p>[Row of 3 feature cards: “Find Housing”, “Get Around”, “Manage Money & Study”]</p>
+  <p>[Two-column section: Left = overview text; Right = image or icon grid]</p>
+  <p>[Dynamic resource preview section (few cards loaded from JSON list)]</p>
+  <p>[Footer with nav links, attributions link, and final-project demo video link]</p>
+</div>
+
+<hr>
+
+<h2>8. Planned JavaScript Features (for Final Project)</h2>
+<p>
+To align with the final individual project description, this site will include the following JavaScript features:
+</p>
+
+<ul>
+  <li><strong>Data Fetching:</strong> Use the Fetch API to load a local JSON file that contains at least 15 resource items (for example: housing resources, scholarship programs, transportation links, and study tools). Use <code>async/await</code> with <code>try...catch</code> for error handling.</li>
+  <li><strong>Dynamic Content:</strong> Generate cards on the Living and Study Planning pages from the JSON data. Each card will show at least four properties (name, type, city/area, short description, and a link or tag).</li>
+  <li><strong>Local Storage:</strong> Allow users to “save” or “favorite” certain resources (for example, a housing link or scholarship). Store these favorites in <code>localStorage</code> and show them in a small “Saved for Later” section.</li>
+  <li><strong>Modal Dialog:</strong> When a user clicks “More Info” on a resource card, open an accessible modal dialog that shows extra details and a link. The modal can be closed with a close button or the Escape key.</li>
+  <li><strong>HTML Form + Action Page:</strong> A simple “Ask a Question / Contact” form that collects name, school, email, and a short question. The form will POST to a basic action page which echoes the submitted data.</li>
+  <li><strong>Array Methods & Template Literals:</strong> Use <code>map</code> / <code>filter</code> / <code>forEach</code> to process the JSON data and build the HTML with template literals.</li>
+  <li><strong>ES Modules:</strong> Split the JavaScript into modules (for example, <code>data-service.js</code>, <code>ui.js</code>, <code>main.js</code>) to keep the code organized.</li>
+</ul>
+
+<hr>
+
+<h2>9. Reason I Chose This Subject</h2>
+<p>
+I am an international student living in Southern California and currently studying at multiple schools,
+including Cal Poly Pomona, BYU-Pathway, and local community colleges. I have personally faced many
+challenges related to housing, transportation, scholarships, work restrictions, and choosing classes.
+Because many new students experience similar problems, I want to create a simple, experience-based,
+and helpful guide that can make their first months in Southern California a little easier.
+</p>
+
+</body>
+</html>
