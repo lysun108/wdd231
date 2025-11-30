@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Los Santos Chamber of Commerce | Discover</title>
+  <meta name="description" content="Discover key neighborhoods, landmarks, and business districts across Los Santos with the chamber discover page." />
+  <meta name="author" content="Yang Liao" />
+
+  <!-- Open Graph Metadata（可沿用主页） -->
+  <meta property="og:title" content="Los Santos Chamber of Commerce — Discover Los Santos">
+  <meta property="og:description" content="Explore iconic spots, business hubs, and neighborhoods across Los Santos.">
+  <meta property="og:image" content="https://lysun108.github.io/wdd231/chamber/images/og-image.png">
+  <meta property="og:url" content="https://lysun108.github.io/wdd231/chamber/discover.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Los Santos Chamber of Commerce — Discover">
+  <meta name="twitter:description" content="Discover what makes Los Santos a great place to live and do business.">
+  <meta name="twitter:image" content="https://lysun108.github.io/wdd231/chamber/images/og-image.png">
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- JSON-LD（可与首页共用同一个文件） -->
+  <script type="application/ld+json" src="data/organization.jsonld"></script>
+</head>
+
+<body>
+  <header>
+    <img src="images/los-santos-logo.png" alt="Los Santos Chamber logo" width="64" height="64" loading="eager">
+    <span class="site-name">Los Santos Chamber of Commerce</span>
+    <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+  </header>
+
+  <nav id="nav-bar" class="navigation" aria-label="primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="current"><a href="discover.html" aria-current="page">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Discover Los Santos</h1>
+
+    <!-- localStorage 访问信息 -->
+    <section id="visitor-message" class="visitor-message" aria-live="polite"></section>
+
+    <section class="discover-intro">
+      <p>
+        From Vinewood Hills to Del Perro Pier, Los Santos offers a mix of tech startups, beachfront retail,
+        industrial hubs, and quiet neighborhoods. Explore a few highlights below that show why this is a great
+        place to live, work, and build a business.
+      </p>
+    </section>
+
+    <!-- 8 张卡片的网格容器：用 grid-template-areas 布局 -->
+    <section class="discover-grid" aria-label="Points of interest across Los Santos">
+      <!-- JS will inject 8 cards here from JSON data -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-address">
+      <strong>Address:</strong> 1 Badger Building, Downtown, Los Santos, San Andreas 90210
+    </p>
+    <div class="social">
+      <a href="https://github.com/lysun108" aria-label="GitHub"><img src="images/github.svg" alt="Github"></a>
+      <a href="https://www.linkedin.com/in/lysun108/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+    </div>
+    <p class="copyright">© <span id="currentyear"></span> Yang Liao · California, USA · WDD231 Class Project</p>
+    <p id="lastModified" aria-label="Last modified date"></p>
+  </footer>
+
+  <!-- 复用现有脚本 -->
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/date.js"></script>
+
+  <!-- 本周新脚本：模块形式 -->
+  <script type="module" src="scripts/discover.js"></script>
+</body>
+</html>
