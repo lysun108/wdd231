@@ -376,3 +376,101 @@ footer.site-footer{
   color:#64748b;
   margin:0;
 }
+/* ===== Discover Page (mobile base, 320–767px) ===== */
+
+/* localStorage 欢迎信息 */
+.visitor-message {
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #e5edf9;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* 简短介绍段落 */
+.discover-intro {
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* 8 张卡片的基础布局：一列，用 named grid areas */
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h";
+}
+
+/* 单独给 Discover 用一套卡片样式，和 .card 不冲突 */
+.discover-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid #d1d5db;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.discover-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.discover-card figure {
+  margin: 0;
+}
+
+.discover-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.discover-card address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.discover-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.learn-more-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--brand);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* grid-area 名称，对应 discover.mjs 里的 id: a–h */
+.area-a { grid-area: a; }
+.area-b { grid-area: b; }
+.area-c { grid-area: c; }
+.area-d { grid-area: d; }
+.area-e { grid-area: e; }
+.area-f { grid-area: f; }
+.area-g { grid-area: g; }
+.area-h { grid-area: h; }
