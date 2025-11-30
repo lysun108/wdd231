@@ -68,6 +68,18 @@
     gap: 1.25rem;
   }
 
+  /* ===== Discover Page – Medium Layout (2 columns) ===== */
+  .discover-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f"
+      "g h";
+  }
+
   /* ===== Partners ===== */
   .logo-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -150,5 +162,25 @@
 
   .contact-grid {
     grid-template-columns: 1fr 460px;
+  }
+
+  /* ===== Discover Page – Large Layout (3 columns + hover effect) ===== */
+  .discover-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "a b c"
+      "d e f"
+      "g h .";
+  }
+
+  /* 只在桌面端启用图片 hover 效果（符合作业要求） */
+  .discover-card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+
+  .discover-card:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    filter: brightness(1.03);
   }
 }
