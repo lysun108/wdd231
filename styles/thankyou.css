@@ -1,0 +1,101 @@
+/* Thank You page specific styles */
+
+.thankyou-main {
+  max-width: 960px;
+  margin: 2.5rem auto 3.5rem;
+  padding: 0 1rem;
+}
+
+.thankyou-card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  animation: thankyou-fade-up 500ms ease-out;
+}
+
+.thankyou-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.9rem, 2.3vw, 2.3rem);
+}
+
+.thankyou-card .lead {
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.summary {
+  margin-top: 2rem;
+}
+
+.summary h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-hint {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.summary-list {
+  margin: 0;
+  padding: 0;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 160px) minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-row dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.summary-row dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.thankyou-actions {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons rely on existing .btn / .primary-btn / .ghost-btn styles */
+/* Adjust spacing on small screens */
+@media (max-width: 600px) {
+  .thankyou-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .summary-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Simple entrance animation */
+@keyframes thankyou-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
