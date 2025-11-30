@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Los Santos Chamber of Commerce</title>
+  <meta name="description" content="Thank you for applying to join the Los Santos Chamber of Commerce." />
+  <meta name="author" content="Yang Liao" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Thank you page extra styles (external file as required) -->
+  <link rel="stylesheet" href="styles/thankyou.css">
+</head>
+
+<body>
+  <header>
+    <img src="images/los-santos-logo.png" alt="Los Santos Chamber logo" width="64" height="64" loading="eager">
+    <span class="site-name">Los Santos Chamber of Commerce</span>
+    <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+  </header>
+
+  <nav id="nav-bar" class="navigation" aria-label="primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+
+  <main class="thankyou-main">
+    <section class="thankyou-card">
+      <h1>Thank You for Your Application!</h1>
+      <p class="lead">
+        Your membership application has been successfully submitted to the
+        <strong>Los Santos Chamber of Commerce</strong>.
+      </p>
+      <p>
+        Our team will review your information and contact you soon using the email and phone number you provided.
+      </p>
+
+      <section class="summary">
+        <h2>Application Summary</h2>
+        <p class="summary-hint">Here is a recap of the information you submitted:</p>
+
+        <dl class="summary-list">
+          <div class="summary-row">
+            <dt>First Name</dt>
+            <dd id="out-first">—</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Last Name</dt>
+            <dd id="out-last">—</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Email</dt>
+            <dd id="out-email">—</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Mobile Phone</dt>
+            <dd id="out-phone">—</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Business / Organization</dt>
+            <dd id="out-organization">—</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Submitted At</dt>
+            <dd id="out-timestamp">—</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="thankyou-actions">
+        <a href="join.html" class="btn ghost-btn">Back to Join Page</a>
+        <a href="index.html" class="btn primary-btn">Go to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-address">
+      <strong>Address:</strong> 1 Badger Building, Downtown, Los Santos, San Andreas 90210
+    </p>
+    <div class="social">
+      <a href="https://github.com/lysun108" aria-label="GitHub"><img src="images/github.svg" alt="Github"></a>
+      <a href="https://www.linkedin.com/in/lysun108/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+    </div>
+    <p class="copyright">© <span id="currentyear"></span> Yang Liao · California, USA · WDD231 Class Project</p>
+    <p id="lastModified" aria-label="Last modified date"></p>
+  </footer>
+
+  <!-- Shared scripts -->
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/date.js"></script>
+
+  <!-- Thank you page logic: read GET params and display required fields -->
+  <script defer src="scripts/thankyou.js"></script>
+</body>
+</html>
